@@ -1,0 +1,26 @@
+/* Base style for the link or text */
+.underline-hover {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black; /* Change this as per your needs */
+    font-weight: 600; /* Optional */
+}
+
+/* Create the underline using the ::after pseudo-element */
+.underline-hover::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    bottom: -3px; /* Adjust this based on spacing between text and underline */
+    left: 0;
+    background-color: black; /* Color of the underline */
+    transition: width 0.4s ease, left 0.4s ease; /* Controls the timing of the animation */
+}
+
+/* On hover, animate the underline from left to right */
+.underline-hover:hover::after {
+    width: 100%;
+    left: 0;
+}

@@ -3,75 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Navbar Color on Scroll</title>
-    <style>
-        /* Basic styling */
-        body {
-            background-color: black;
-            margin: 0;
-            padding: 0;
-            height: 2000px; /* Make the page scrollable */
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px;
-            color: white; /* Default text color */
-            transition: color 0.5s ease; /* Smooth text color transition */
-            z-index: 1000;
-        }
-
-        nav h1 {
-            margin: 0;
-            position: relative;
-        }
-
-        /* Add the sliding background effect with the ::before pseudo-element */
-        nav::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%; /* Start the background off-screen */
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            transition: left 0.5s ease; /* Sliding effect */
-            z-index: -1;
-        }
-
-        /* White background slides in and text turns black */
-        .scrolled {
-            color: black; /* Text color turns black */
-        }
-
-        .scrolled::before {
-            left: 0; /* Slide the background to cover the navbar */
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-
-    <nav id="navbar">
-        <h1>My Website</h1>
-    </nav>
-
-    <script>
-        // Get the navbar element
-        const navbar = document.getElementById('navbar');
-
-        // Add a scroll event listener
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // Adjust this value as needed
-                // Add the 'scrolled' class when the user scrolls down
-                navbar.classList.add('scrolled');
-            } else {
-                // Remove the 'scrolled' class when the user scrolls back up
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
-
+    <a href="#" class="underline-hover">Hover Over Me</a>
 </body>
 </html>

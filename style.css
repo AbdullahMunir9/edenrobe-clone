@@ -17,7 +17,7 @@
     overflow: hidden;
     position: sticky;
     top: 0;
-    z-index: 1001;
+    z-index: 3;
 }
 .Announcement-Bar-items{
     display: flex;
@@ -57,16 +57,19 @@
 .scrolled{
     background-color: white;
 }
+.NavdropDown:hover{
+    display: block;
+}
 
 .NavBar{
     display: flex;
     width: 100%;
-    height: 12%;
+    height: 13.5%;
     justify-content:space-around;
     align-items: center;
     position: fixed;
     border-bottom: 1px solid white;
-    z-index: 1000;
+    z-index: 2;
     transition: background-color 0.3s linear;
     box-shadow: 0px 0px 10px rgb(176, 171, 171);
 }
@@ -84,19 +87,22 @@ ul,li{
 }
 
 /* Nav bar drop down */
-/* .Has_dropDown{
-    position: relative;
-}
 .NavdropDown{
-    position: absolute;
-    background-color: black;
-    top: 240%;
-    width: 100vw;
-    height: 200px;
+    position: fixed;
+    background-color: white;
+    top: 19.9%;
+    width: 100%;
+    z-index: 4;
+    padding-top: 3px;
+    display: none;
+    color: black;
+}
+.NavdropDown>li{
+    color: black;
 }
 .NavdropDown>img{
-    height: 80%;
-} */
+    height: 50vh;
+}
 
 
 /* Main Body Of webpage */
