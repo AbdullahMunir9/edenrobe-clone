@@ -78,15 +78,30 @@ function whileScroll(){
 window.addEventListener("scroll",whileScroll);
 
 var dropdown = document.getElementsByClassName("showDropDown");
+var hoverdropdown = document.getElementsByClassName("NavdropDown");
 
 // First Drop Down
+
 
 dropdown[0].addEventListener("mouseenter",()=>{
     document.getElementsByClassName("NavdropDown")[0].style.display = "block";
 })
-dropdown[0].addEventListener("mouseleave",()=>{
-    document.getElementsByClassName("NavdropDown")[0].style.display = "none";
-})
+// dropdown[0].addEventListener("mouseleave",()=>{
+//     document.getElementsByClassName("NavdropDown")[0].style.display = "none";
+// })
+
+dropdown[0].addEventListener("mouseleave", ()=>{
+    if (!document.getElementsByClassName("NavdropDown")[0].matches(':hover')) {
+        document.getElementsByClassName("NavdropDown")[0].style.display = "none";
+    }
+});
+document.getElementsByClassName("NavdropDown")[0].addEventListener("mouseleave", ()=>{
+    if (!dropdown[0].matches(':hover')) {
+        document.getElementsByClassName("NavdropDown")[0].style.display = "none";
+    }
+});
+
+
 
 // Second Drop Down
 
