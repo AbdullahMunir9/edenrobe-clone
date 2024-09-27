@@ -77,64 +77,68 @@ function whileScroll(){
 
 window.addEventListener("scroll",whileScroll);
 
-var dropdown = document.getElementsByClassName("showDropDown");
-var hoverdropdown = document.getElementsByClassName("NavdropDown");
+
+
+//  Drop Down Example JS
+
+// var dropdown = document.getElementsByClassName("showDropDown");
+// var hoverdropdown = document.getElementsByClassName("NavdropDown");
 
 // First Drop Down
 
 
-dropdown[0].addEventListener("mouseenter",()=>{
-    document.getElementsByClassName("NavdropDown")[0].style.display = "block";
-})
+// dropdown[0].addEventListener("mouseenter",()=>{
+//     document.getElementsByClassName("NavdropDown")[0].style.display = "block";
+// })
 // dropdown[0].addEventListener("mouseleave",()=>{
 //     document.getElementsByClassName("NavdropDown")[0].style.display = "none";
 // })
 
-dropdown[0].addEventListener("mouseleave", ()=>{
-    if (!document.getElementsByClassName("NavdropDown")[0].matches(':hover')) {
-        document.getElementsByClassName("NavdropDown")[0].style.display = "none";
-    }
-});
-document.getElementsByClassName("NavdropDown")[0].addEventListener("mouseleave", ()=>{
-    if (!dropdown[0].matches(':hover')) {
-        document.getElementsByClassName("NavdropDown")[0].style.display = "none";
-    }
-});
+// dropdown[0].addEventListener("mouseleave", ()=>{
+//     if (!document.getElementsByClassName("NavdropDown")[0].matches(':hover')) {
+//         document.getElementsByClassName("NavdropDown")[0].style.display = "none";
+//     }
+// });
+// document.getElementsByClassName("NavdropDown")[0].addEventListener("mouseleave", ()=>{
+//     if (!dropdown[0].matches(':hover')) {
+//         document.getElementsByClassName("NavdropDown")[0].style.display = "none";
+//     }
+// });
 
 
 
 // Second Drop Down
 
-dropdown[1].addEventListener("mouseenter",()=>{
-    document.getElementsByClassName("NavdropDown")[1].style.display = "block";
-})
-dropdown[1].addEventListener("mouseleave",()=>{
-    document.getElementsByClassName("NavdropDown")[1].style.display = "none";
-})
+// dropdown[1].addEventListener("mouseenter",()=>{
+//     document.getElementsByClassName("NavdropDown")[1].style.display = "block";
+// })
+// dropdown[1].addEventListener("mouseleave",()=>{
+//     document.getElementsByClassName("NavdropDown")[1].style.display = "none";
+// })
 
 // Third Drop Down
 
-dropdown[2].addEventListener("mouseenter",()=>{
-    document.getElementsByClassName("NavdropDown")[2].style.display = "block";
-})
-dropdown[2].addEventListener("mouseleave",()=>{
-    document.getElementsByClassName("NavdropDown")[2].style.display = "none";
-})
+// dropdown[2].addEventListener("mouseenter",()=>{
+//     document.getElementsByClassName("NavdropDown")[2].style.display = "block";
+// })
+// dropdown[2].addEventListener("mouseleave",()=>{
+//     document.getElementsByClassName("NavdropDown")[2].style.display = "none";
+// })
 
 // Fourth Drop Down
 
-dropdown[3].addEventListener("mouseenter",()=>{
-    document.getElementsByClassName("NavdropDown")[3].style.display = "block";
-})
-dropdown[3].addEventListener("mouseleave",()=>{
-    document.getElementsByClassName("NavdropDown")[3].style.display = "none";
-})
+// dropdown[3].addEventListener("mouseenter",()=>{
+//     document.getElementsByClassName("NavdropDown")[3].style.display = "block";
+// })
+// dropdown[3].addEventListener("mouseleave",()=>{
+//     document.getElementsByClassName("NavdropDown")[3].style.display = "none";
+// })
 
 // Fifth Drop Down
 
-dropdown[4].addEventListener("mouseenter",()=>{
-    document.getElementsByClassName("NavdropDown")[4].style.display = "block";
-})
-dropdown[4].addEventListener("mouseleave",()=>{
-    document.getElementsByClassName("NavdropDown")[4].style.display = "none";
-})
+// dropdown[4].addEventListener("mouseenter",()=>{
+//     document.getElementsByClassName("NavdropDown")[4].style.display = "block";
+// })
+// dropdown[4].addEventListener("mouseleave",()=>{
+//     document.getElementsByClassName("NavdropDown")[4].style.display = "none";
+// })

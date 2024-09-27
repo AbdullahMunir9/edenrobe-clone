@@ -19,6 +19,9 @@
     top: 0;
     z-index: 3;
 }
+.Announcement-Bar a{
+    color: red;
+}
 .Announcement-Bar-items{
     display: flex;
 }
@@ -57,9 +60,6 @@
 .scrolled{
     background-color: white;
 }
-.NavdropDown:hover{
-    display: block;
-}
 
 .NavBar{
     display: flex;
@@ -73,13 +73,24 @@
     transition: background-color 0.3s linear;
     box-shadow: 0px 0px 10px rgb(176, 171, 171);
 }
+.nav_item_container2{
+    height: 100%;
+}
+.nav_item_container2>ul{
+    height: 100%;
+}
+.nav_item_container2 .important{
+    color: red !important;
+}
+.nav_item_container2>ul>li{
+    height: 100%;
+    align-content: center;
+}
 .nav_item_container2 li{
     margin-right: 30px;
-    flex-wrap: nowrap;
 }
 .nav_item_container3 li{
     margin-right: 15px;
-    flex-wrap: nowrap;
 }
 ul,li{
     display: inline-block;
@@ -89,22 +100,37 @@ ul,li{
 }
 
 /* Nav bar drop down */
-.NavdropDown{
-    position: fixed;
+.NavdropDown {
+    position: absolute;
+    left: 0;
+    right: 0;
     background-color: white;
-    top: 19.9%;
-    width: 100%;
-    z-index: 4;
-    padding-top: 3px;
     display: none;
+    top: 90px;
+    z-index: 10000;
+    width: 100vw;
     color: black;
+    border-top: 2px solid black;
 }
-.NavdropDown>li{
-    color: black;
+.navListItems:hover .NavdropDown{
+    display: block;
 }
-.NavdropDown>img{
-    height: 50vh;
+.DropDownInsideContainer{
+    padding-left: 8%;
+    display: flex;
+    justify-content: space-between;
 }
+.DropDownInsideContainer li{
+    display: block;
+    padding-top: 9%;
+}
+.Heading{
+    font-weight: 900;
+}
+.DropDownInsideContainer img{
+    height: 340px;
+ }
+
 
 
 /* Main Body Of webpage */
@@ -158,22 +184,12 @@ ul,li{
     }
 }
 
-/* .main_flex1{
-    width: 100%;
-}
-.main_flex2{
-    width: 100%;
-}
-.main_flex3{
-    width: 100%;
-} */
-
 main>div{
     margin: 2px;
 }
 
 .main_flex1 a>img{
-    width: 49.85%;
+    width: 49.8%;
 }
 
 .main_flex2 a>img{
@@ -332,3 +348,21 @@ footer{
     padding: 0.75%;
     border-radius: 5px;
 }
+
+
+/* .NavdropDown{
+    position: fixed;
+    background-color: white;
+    top: 19.9%;
+    width: 100%;
+    z-index: 4;
+    padding-top: 3px;
+    display: none;
+    color: black;
+}
+.NavdropDown>li{
+    color: black;
+}
+.NavdropDown>img{
+    height: 50vh;
+} */
