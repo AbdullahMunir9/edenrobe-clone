@@ -79,6 +79,59 @@ window.addEventListener("scroll",whileScroll);
 
 
 
+
+// JavaScript for carousel functionality
+// const carouselContainer = document.querySelector(".carousel_container");
+// const carouselUl = carouselContainer.querySelector("ul");
+// const prevButton = carouselContainer.querySelector(".prev_button");
+// const nextButton = carouselContainer.querySelector(".next_button");
+// const totalImages = carouselUl.children.length; // Get total number of images
+// let currentIndex = 0; // Track the current image index
+
+// // Set the width of the carousel container to only show one image at a time
+// const imageWidth = carouselUl.children[0].offsetWidth; // Width of each image
+// carouselUl.style.width = `${imageWidth * totalImages}px`; // Set the width of the entire ul to fit all images
+
+// // Function to update carousel position
+// function updateCarouselPosition() {
+//     const newTranslateX = -currentIndex * imageWidth; // Calculate how much to translate
+//     carouselUl.style.transform = `translateX(${newTranslateX}px)`; // Move the ul element
+// }
+
+// // Next button functionality
+// nextButton.addEventListener("click", () => {
+//     if (currentIndex < totalImages - 1) { // Make sure it doesn't go beyond the last image
+//         currentIndex++;
+//         updateCarouselPosition();
+//     }
+// });
+
+// // Prev button functionality
+// prevButton.addEventListener("click", () => {
+//     if (currentIndex > 0) { // Make sure it doesn't go before the first image
+//         currentIndex--;
+//         updateCarouselPosition();
+//     }
+// });
+
+// // Optional: Add smooth transition when moving
+// carouselUl.style.transition = "transform 0.5s ease";
+
+
+// Carousel button hover animation
+
+// var carousel_cont = document.getElementsByClassName("carousel_container")[0];
+// carousel_cont.addEventListener("mouseenter",()=>{
+//     carousel_cont.getElementsByClassName("prev_button")[0].style.display = "block";
+//     carousel_cont.getElementsByClassName("next_button")[0].style.display = "block";
+// });
+// carousel_cont.addEventListener("mouseleave",()=>{
+//     carousel_cont.getElementsByClassName("next_button")[0].style.display = "none";
+//     carousel_cont.getElementsByClassName("prev_button")[0].style.display = "none";
+// });
+
+
+
 //  Drop Down Example JS
 
 // var dropdown = document.getElementsByClassName("showDropDown");

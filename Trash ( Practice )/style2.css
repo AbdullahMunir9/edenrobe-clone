@@ -9,7 +9,7 @@
 
 /* Create the underline using the ::after pseudo-element */
 .underline-hover::after {
-    content: "";
+    content: "hello";
     position: absolute;
     width: 0;
     height: 2px; /* Thickness of the underline */
@@ -22,5 +22,4 @@
 /* On hover, animate the underline from left to right */
 .underline-hover:hover::after {
     width: 100%;
-    left: 0;
 }

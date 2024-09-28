@@ -7,6 +7,24 @@
     text-decoration: none;
 }
 
+/* Under line Hover Animation */
+
+.underline-hover::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    bottom: -3px; /* Adjust this based on spacing between text and underline */
+    left: 0;
+    background-color: black; /* Color of the underline */
+    transition: width 0.4s ease, left 0.4s ease; /* Controls the timing of the animation */
+}
+
+/* On hover, animate the underline from left to right */
+.underline-hover:hover::after {
+    width: 100%;
+}
+
 /* Announcement Bar */
 
 .Announcement-Bar{
@@ -201,6 +219,46 @@ main>div{
 }
 
 
+/* Carousel */
+.carousel_container:hover button{
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+.carousel_container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel_container>ul{
+    display: flex;
+}
+.carousel_container li{
+    margin: 2%;
+}
+.carousel_container img{
+    height: 370px;
+}
+.carousel_container>button{
+    position: absolute;
+    top: 170px;
+    height: 50px;
+    width: 50px;
+    font-size: x-large;
+    opacity: 0;
+    visibility: hidden;
+    padding-bottom: 5px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    transition: opacity 0.5s ease, visibility 0.5s ease;;
+}
+.carousel_container .prev_button{
+    left: 10px;
+}
+.carousel_container .next_button{
+    right: 10px;
+}
 
 /* Footer  */
 
