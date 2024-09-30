@@ -105,7 +105,8 @@
     align-content: center;
 }
 .nav_item_container2 li{
-    margin-right: 2rem;
+    margin-right: 1.5rem;
+    /* margin-right: 30px; */
 }
 .nav_item_container3 li{
     margin-right: 1.2rem;
