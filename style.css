@@ -124,7 +124,7 @@ ul,li{
     right: 0;
     background-color: white;
     display: none;
-    top: 90px;
+    top: 100%;
     z-index: 10000;
     width: 100vw;
     color: black;
