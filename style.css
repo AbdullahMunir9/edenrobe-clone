@@ -105,10 +105,11 @@
     align-content: center;
 }
 .nav_item_container2 li{
-    margin-right: 30px;
+    margin-right: 2rem;
 }
 .nav_item_container3 li{
-    margin-right: 15px;
+    margin-right: 1.2rem;
+    /* margin-right: 15px; */
 }
 ul,li{
     display: inline-block;
