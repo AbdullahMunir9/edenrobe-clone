@@ -77,6 +77,38 @@ function whileScroll(){
 
 window.addEventListener("scroll",whileScroll);
 
+const nextButton = document.querySelector('.next_button');
+const prevButton = document.querySelector('.prev_button');
+const carouselContainer = document.querySelector('.carousel_container ul');
+const carouselItems = document.querySelectorAll('.carousel_container li');
+
+// Calculate the full width of each item (including margin)
+const itemWidth = carouselItems[0].offsetWidth + parseFloat(getComputedStyle(carouselItems[0]).marginRight) * 11;
+let currentIndex = 0;
+
+nextButton.addEventListener('click', () => {
+    // Only move if not at the last item
+    if (currentIndex < carouselItems.length - 4) {
+        currentIndex++;
+        carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        carouselContainer.style.transition = 'transform 0.5s ease';
+    }
+});
+
+prevButton.addEventListener('click', () => {
+    // Only move if not at the first item
+    if (currentIndex > 0) {
+        currentIndex--;
+        carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        carouselContainer.style.transition = 'transform 0.5s ease';
+    }
+});
+
+// const handleSlideButtons = () => {
+//     slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
+//     slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+// }
+
 
 
 

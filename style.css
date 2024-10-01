@@ -106,13 +106,9 @@
 }
 .nav_item_container2 li{
     margin-right: 1.5em;
-    /* margin-right: 1.5rem; */
-    /* margin-right: 30px; */
 }
 .nav_item_container3 li{
     margin-right: 1em;
-    /* margin-right: 1.2rem; */
-    /* margin-right: 15px; */
 }
 ul,li{
     display: inline-block;
@@ -129,7 +125,7 @@ ul,li{
     background-color: white;
     display: none;
     top: 100%;
-    z-index: 10000;
+    /* z-index: 10000; */
     width: 100vw;
     color: black;
     border-top: 2px solid black;
@@ -221,7 +217,30 @@ main>div{
 .main_flex3 a>img{
     width: 33.11%;
 }
-
+/* CAROUSEL DEFINER */
+.carousel_definer{
+    padding-left: 3% ;
+    padding-right: 3%;
+}
+.carousel_definer li:after{
+    content: "/";
+    padding-right: 5px;
+    padding-left: 5px;
+    color: black;
+}
+.carousel_definer li{
+    font-size: larger;
+}
+.carousel_definer>h2{
+    color: black;
+}
+.carousel_definer a{
+    color: rgb(184, 179, 172);
+}
+.carousel_definer>div{
+    display: flex;
+    justify-content: space-between;
+}
 
 /* Carousel */
 .carousel_container:hover button{
@@ -255,13 +274,39 @@ main>div{
     color: black;
     background-color: white;
     border-radius: 50%;
-    transition: opacity 0.5s ease, visibility 0.5s ease;;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 4;
 }
 .carousel_container .prev_button{
     left: 10px;
 }
 .carousel_container .next_button{
     right: 10px;
+}
+
+/* Main Last Pannel */
+.Main_lastpannel{
+    display: flex;
+    justify-content: space-around;
+}
+.Main_lastpannel p{
+    position: relative;
+    margin-top: 1.5%;
+    left: 45%;
+    top: 20%;
+}
+.Main_lastpannel_heading{
+    font-weight: bolder;
+}
+.Main_lastpannel p,.Main_lastpannel a{
+    color: black;
+}
+.Main_lastpannel>div{
+    padding-top: 5%;
+}
+.Main_lastpannel img{
+    height: 30%;
+    float: left;
 }
 
 /* Footer  */
