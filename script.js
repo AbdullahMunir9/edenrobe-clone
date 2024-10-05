@@ -7,6 +7,7 @@ var navListitems = navUL.getElementsByTagName("li");
 var navUL2 = document.getElementById("Nav_ul2");
 var navListitems2 = navUL2.getElementsByTagName("li");
 
+
 Navbar.addEventListener("mouseenter",()=>{
     Navbar.classList.add("scrolled");
     Navlogo.src = 'Images/black_logo.png';
