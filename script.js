@@ -105,6 +105,128 @@ prevButton.addEventListener('click', () => {
     }
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var categorylinks = document.getElementsByClassName("links");
+    var carousel_ul = document.getElementsByClassName("carousel");
+
+
+    // This is default action , meaning the first link will be selected as soon as page loads
+    function hide_carousels(){
+        for(let i=1 ; i<carousel_ul.length ;i++){
+            carousel_ul[i].style.display = "none";
+        }
+    }
+    hide_carousels();
+
+    categorylinks[0].classList.add("selected");
+
+    // These events occur when we click on the links
+    categorylinks[0].addEventListener("click",(event)=>{
+        event.preventDefault();
+        categorylinks[0].classList.add("selected");
+
+        for(let i=0 ; i<categorylinks.length ;i++){
+            if(i==0){
+                continue;
+            }
+            categorylinks[i].classList.remove("selected");
+        }
+
+        for(let i=0 ; i<carousel_ul.length ;i++){
+            if(i==0){
+                carousel_ul[i].style.display = "flex";
+                continue;
+            }
+            carousel_ul[i].style.display = "none";
+        }
+
+    });
+
+    categorylinks[1].addEventListener("click",(event)=>{
+        event.preventDefault();
+        categorylinks[1].classList.add("selected");
+
+        for(let i=0 ; i<categorylinks.length ;i++){
+            if(i==1){
+                continue;
+            }
+            categorylinks[i].classList.remove("selected");
+        }
+
+        for(let i=0 ; i<carousel_ul.length ;i++){
+            if(i==1){
+                carousel_ul[i].style.display = "flex";
+                continue;
+            }
+            carousel_ul[i].style.display = "none";
+        }
+    });
+
+    categorylinks[2].addEventListener("click",(event)=>{
+        event.preventDefault();
+        categorylinks[2].classList.add("selected");
+
+        for(let i=0 ; i<categorylinks.length ;i++){
+            if(i==2){
+                continue;
+            }
+            categorylinks[i].classList.remove("selected");
+        }
+
+        for(let i=0 ; i<carousel_ul.length ;i++){
+            if(i==2){
+                carousel_ul[i].style.display = "flex";
+                continue;
+            }
+            carousel_ul[i].style.display = "none";
+        }
+    });
+
+    categorylinks[3].addEventListener("click",(event)=>{
+        event.preventDefault();
+        categorylinks[3].classList.add("selected");
+
+        for(let i=0 ; i<categorylinks.length ;i++){
+            if(i==3){
+                continue;
+            }
+            categorylinks[i].classList.remove("selected");
+        }
+
+        for(let i=0 ; i<carousel_ul.length ;i++){
+            if(i==3){
+                carousel_ul[i].style.display = "flex";
+                continue;
+            }
+            carousel_ul[i].style.display = "none";
+        }
+    });
+    
+});
+
+// categorylinks.forEach(links => {
+//     links.addEventListener("click",function(event){
+//         event.preventDefault();
+//     });
+// });
+
+// var men_carousel_ul = document.getElementsByClassName("Men_Carousel")[0];
+// var Women_carousel_ul = document.getElementsByClassName("Women_Carousel")[0];
+// var Kids_carousel_ul = document.getElementsByClassName("Kids_Carousel")[0];
+// var Fragrances_carousel_ul = document.getElementsByClassName("Frangrances_Carousel")[0];
+
+// var carousel_definer_ul = document.querySelector('.carousel_definer ul');
+
+// var carousel_uls = document.querySelectorAll("carousel_container ul");
+// for(let i=1 ; i<carousel_uls.length ; i++){
+//     carousel_uls[i].style.display = 'none';
+// }
+
+
+
 // const handleSlideButtons = () => {
 //     slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
 //     slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";

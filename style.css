@@ -219,7 +219,9 @@ main>div{
 .main_flex3 a>img{
     width: 33.11%;
 }
+
 /* CAROUSEL DEFINER */
+
 .carousel_definer{
     padding-left: 3% ;
     padding-right: 3%;
@@ -242,6 +244,10 @@ main>div{
 .carousel_definer>div{
     display: flex;
     justify-content: space-between;
+}
+.selected{
+    color: rgb(0, 0, 0) !important;
+    text-decoration: underline;
 }
 
 /* Carousel */
