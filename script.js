@@ -78,54 +78,97 @@ function whileScroll(){
 
 window.addEventListener("scroll",whileScroll);
 
+// carousel Animations 
+
 const nextButton = document.querySelector('.next_button');
 const prevButton = document.querySelector('.prev_button');
 const carouselContainer = document.querySelectorAll('.carousel_container ul');
 const carouselItems = document.querySelectorAll('.Men_Carousel li');
 
 // Calculate the full width of each item (including margin)
-const itemWidth = carouselItems[0].offsetWidth + parseFloat(getComputedStyle(carouselItems[0]).marginRight) * 11;
-let currentIndex = 0;
+const itemWidth = carouselItems[0].offsetWidth + parseFloat(getComputedStyle(carouselItems[0]).marginRight) * 11.5;
+let currentIndex1 = 0;
 
 nextButton.addEventListener('click', () => {
     // Only move if not at the last item
-    if (currentIndex < carouselItems.length - 4) {
-        currentIndex++;
-        carouselContainer[0].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    if (currentIndex1 < carouselItems.length - 4) {
+        currentIndex1++;
+        carouselContainer[0].style.transform = `translateX(-${currentIndex1 * itemWidth}px)`;
         carouselContainer[0].style.transition = 'transform 0.5s ease';
     }
 });
 
 prevButton.addEventListener('click', () => {
     // Only move if not at the first item
-    if (currentIndex > 0) {
-        currentIndex--;
-        carouselContainer[0].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    if (currentIndex1 > 0) {
+        currentIndex1--;
+        carouselContainer[0].style.transform = `translateX(-${currentIndex1 * itemWidth}px)`;
         carouselContainer[0].style.transition = 'transform 0.5s ease';
     }
 });
 
-// currentIndex = 0;
+let currentIndex2 = 0;
 
-// nextButton.addEventListener('click', () => {
-//     // Only move if not at the last item
-//     if (currentIndex < carouselItems.length - 4) {
-//         currentIndex++;
-//         carouselContainer[1].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-//         carouselContainer[1].style.transition = 'transform 0.5s ease';
-//     }
-// });
+nextButton.addEventListener('click', () => {
+    // Only move if not at the last item
+    if (currentIndex2 < carouselItems.length - 4) {
+        currentIndex2++;
+        carouselContainer[1].style.transform = `translateX(-${currentIndex2 * itemWidth}px)`;
+        carouselContainer[1].style.transition = 'transform 0.5s ease';
+    }
+});
 
-// prevButton.addEventListener('click', () => {
-//     // Only move if not at the first item
-//     if (currentIndex > 0) {
-//         currentIndex--;
-//         carouselContainer[1].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-//         carouselContainer[1].style.transition = 'transform 0.5s ease';
-//     }
-// });
+prevButton.addEventListener('click', () => {
+    // Only move if not at the first item
+    if (currentIndex2 > 0) {
+        currentIndex2--;
+        carouselContainer[1].style.transform = `translateX(-${currentIndex2 * itemWidth}px)`;
+        carouselContainer[1].style.transition = 'transform 0.5s ease';
+    }
+});
+
+let currentIndex3 = 0;
+
+nextButton.addEventListener('click', () => {
+    // Only move if not at the last item
+    if (currentIndex3 < carouselItems.length - 4) {
+        currentIndex3++;
+        carouselContainer[2].style.transform = `translateX(-${currentIndex3 * itemWidth}px)`;
+        carouselContainer[2].style.transition = 'transform 0.5s ease';
+    }
+});
+
+prevButton.addEventListener('click', () => {
+    // Only move if not at the first item
+    if (currentIndex3 > 0) {
+        currentIndex3--;
+        carouselContainer[2].style.transform = `translateX(-${currentIndex3 * itemWidth}px)`;
+        carouselContainer[2].style.transition = 'transform 0.5s ease';
+    }
+});
+
+let currentIndex4 = 0;
+
+nextButton.addEventListener('click', () => {
+    // Only move if not at the last item
+    if (currentIndex4 < carouselItems.length - 4) {
+        currentIndex4++;
+        carouselContainer[3].style.transform = `translateX(-${currentIndex4 * itemWidth}px)`;
+        carouselContainer[3].style.transition = 'transform 0.5s ease';
+    }
+});
+
+prevButton.addEventListener('click', () => {
+    // Only move if not at the first item
+    if (currentIndex4 > 0) {
+        currentIndex4--;
+        carouselContainer[3].style.transform = `translateX(-${currentIndex4 * itemWidth}px)`;
+        carouselContainer[3].style.transition = 'transform 0.5s ease';
+    }
+});
 
 
+// Carousel Definer Animations
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -146,7 +189,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // These events occur when we click on the links
     categorylinks[0].addEventListener("click",(event)=>{
         event.preventDefault();
+        currentIndex1 = 0;
         categorylinks[0].classList.add("selected");
+        carouselContainer[0].style.transform = `translateX(0px)`;
+
 
         for(let i=0 ; i<categorylinks.length ;i++){
             if(i==0){
@@ -167,7 +213,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     categorylinks[1].addEventListener("click",(event)=>{
         event.preventDefault();
+        currentIndex2 = 0;
         categorylinks[1].classList.add("selected");
+        carouselContainer[1].style.transform = `translateX(0px)`;
+
 
         for(let i=0 ; i<categorylinks.length ;i++){
             if(i==1){
@@ -186,8 +235,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     categorylinks[2].addEventListener("click",(event)=>{
+        currentIndex3 = 0;
         event.preventDefault();
         categorylinks[2].classList.add("selected");
+        carouselContainer[2].style.transform = `translateX(0px)`;
 
         for(let i=0 ; i<categorylinks.length ;i++){
             if(i==2){
@@ -206,8 +257,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     categorylinks[3].addEventListener("click",(event)=>{
+        currentIndex4 = 0;
         event.preventDefault();
         categorylinks[3].classList.add("selected");
+        carouselContainer[3].style.transform = `translateX(0px)`;
 
         for(let i=0 ; i<categorylinks.length ;i++){
             if(i==3){
