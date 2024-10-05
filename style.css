@@ -228,17 +228,17 @@ main>div{
 }
 .carousel_definer li:after{
     content: "/";
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     color: black;
 }
 .carousel_definer li{
     font-size: larger;
 }
-.carousel_definer>h2{
+.carousel_definer>h2,.carousel_definer_anchor{
     color: black;
 }
-.carousel_definer a{
+.carousel_definer ul a{
     color: rgb(184, 179, 172);
 }
 .carousel_definer>div{

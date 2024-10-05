@@ -174,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var categorylinks = document.getElementsByClassName("links");
     var carousel_ul = document.getElementsByClassName("carousel");
+    var anchor_description = document.querySelector(".carousel_definer_anchor");
 
 
     // This is default action , meaning the first link will be selected as soon as page loads
@@ -209,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
             carousel_ul[i].style.display = "none";
         }
 
+        anchor_description.innerHTML = "Shop Men";
     });
 
     categorylinks[1].addEventListener("click",(event)=>{
@@ -232,6 +234,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             carousel_ul[i].style.display = "none";
         }
+
+        anchor_description.innerHTML = "Shop Women";
     });
 
     categorylinks[2].addEventListener("click",(event)=>{
@@ -254,6 +258,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             carousel_ul[i].style.display = "none";
         }
+
+        anchor_description.innerHTML = 'Shop Kids';
     });
 
     categorylinks[3].addEventListener("click",(event)=>{
@@ -276,6 +282,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             carousel_ul[i].style.display = "none";
         }
+
+        anchor_description.innerHTML = 'Shop Fragrances';
     });
     
 });
