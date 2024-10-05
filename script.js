@@ -80,8 +80,8 @@ window.addEventListener("scroll",whileScroll);
 
 const nextButton = document.querySelector('.next_button');
 const prevButton = document.querySelector('.prev_button');
-const carouselContainer = document.querySelector('.carousel_container ul');
-const carouselItems = document.querySelectorAll('.carousel_container li');
+const carouselContainer = document.querySelectorAll('.carousel_container ul');
+const carouselItems = document.querySelectorAll('.Men_Carousel li');
 
 // Calculate the full width of each item (including margin)
 const itemWidth = carouselItems[0].offsetWidth + parseFloat(getComputedStyle(carouselItems[0]).marginRight) * 11;
@@ -91,8 +91,8 @@ nextButton.addEventListener('click', () => {
     // Only move if not at the last item
     if (currentIndex < carouselItems.length - 4) {
         currentIndex++;
-        carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        carouselContainer.style.transition = 'transform 0.5s ease';
+        carouselContainer[0].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        carouselContainer[0].style.transition = 'transform 0.5s ease';
     }
 });
 
@@ -100,10 +100,30 @@ prevButton.addEventListener('click', () => {
     // Only move if not at the first item
     if (currentIndex > 0) {
         currentIndex--;
-        carouselContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        carouselContainer.style.transition = 'transform 0.5s ease';
+        carouselContainer[0].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        carouselContainer[0].style.transition = 'transform 0.5s ease';
     }
 });
+
+// currentIndex = 0;
+
+// nextButton.addEventListener('click', () => {
+//     // Only move if not at the last item
+//     if (currentIndex < carouselItems.length - 4) {
+//         currentIndex++;
+//         carouselContainer[1].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+//         carouselContainer[1].style.transition = 'transform 0.5s ease';
+//     }
+// });
+
+// prevButton.addEventListener('click', () => {
+//     // Only move if not at the first item
+//     if (currentIndex > 0) {
+//         currentIndex--;
+//         carouselContainer[1].style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+//         carouselContainer[1].style.transition = 'transform 0.5s ease';
+//     }
+// });
 
 
 
