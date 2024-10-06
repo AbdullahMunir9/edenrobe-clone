@@ -207,17 +207,20 @@ ul,li{
 main>div{
     margin: 2px;
 }
-
+.main_flex1,.main_flex2,.main_flex3{
+    display: flex;
+    justify-content: space-between;
+}
 .main_flex1 a>img{
-    width: 49.8%;
+    width: 99.7%;
 }
 
 .main_flex2 a>img{
-    width: 33.11%;
+    width: 99.5%;
 }
 
 .main_flex3 a>img{
-    width: 33.11%;
+    width: 99.5%;
 }
 
 /* CAROUSEL DEFINER */
@@ -336,8 +339,8 @@ main>div{
 .footer_links{
     border-top: 1px solid rgb(219, 209, 209);
     height: 24vh;
-    padding-left: 155px;
-    padding-right: 155px;
+    padding-left: 10%;
+    padding-right: 10%;
     align-content: center;
     box-shadow: 0px 10px 15px black;
     line-height: 35px;
