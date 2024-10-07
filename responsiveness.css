@@ -1,0 +1,19 @@
+@media (max-width : 380px) {
+/* Anouncement Bar */
+    .Announcement-Bar{
+        position: sticky;
+        top: 0;
+    }
+    .Scroller{
+        animation: textscroller 10s linear infinite ;
+    }
+    .Announcement-Bar-text{
+        margin-right: 15%;
+    }
+/* Nav bar */
+    .NavBar{
+        height: 4%;
+        width: 100%;
+        position: fixed;
+    }
+}
