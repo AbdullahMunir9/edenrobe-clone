@@ -1,4 +1,4 @@
-@media (max-width : 380px) {
+@media (max-width : 390px) {
 /* Anouncement Bar */
     .Announcement-Bar{
         position: sticky;
@@ -12,7 +12,7 @@
     }
 /* Nav bar */
     .NavBar{
-        height: 4%;
+        height: 7%;
         width: 100%;
         position: fixed;
     }
