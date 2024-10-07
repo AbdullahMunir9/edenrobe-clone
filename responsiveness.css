@@ -16,4 +16,7 @@
         width: 100%;
         position: fixed;
     }
+    .nav_item_container3,.nav_item_container1,.nav_item_container2{
+        display: none;
+    }
 }
