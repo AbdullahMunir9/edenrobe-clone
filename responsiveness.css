@@ -19,14 +19,17 @@
         position: fixed;
         overflow-x: hidden;
     }
-    main>div{
-        margin: 0px;
-    }
     .nav_item_container3,.nav_item_container1,.nav_item_container2{
         display: none;
     }
+    .resp_cont1,.resp_cont2,.resp_cont3{
+        display: block;
+    }
 
     /* Main Body */
+    main>div{
+        margin: 0px;
+    }
     .slideshow_img_container{
         height: 80vh;
     }

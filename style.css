@@ -123,7 +123,9 @@ ul,li{
 .nav_logo{
     height: 30px;
 }
-
+.resp_cont1,.resp_cont2,.resp_cont3{
+    display: none;
+}
 /* Nav bar drop down */
 .NavdropDown {
     position: absolute;
