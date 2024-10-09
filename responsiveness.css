@@ -1,7 +1,4 @@
 @media (max-width : 400px) {
-    /* .body{
-        overflow-x: hidden;   
-    } */
     /* Anouncement Bar */
     .Announcement-Bar{
         position: sticky;
@@ -14,21 +11,30 @@
         margin-right: 15%;
         font-size: 9px;
     }
-/* Nav bar */
+
+    /* Nav bar */
     .NavBar{
-        height: 15%;
+        height: 12%;
         width: 100%;
         position: fixed;
         overflow-x: hidden;
     }
+    main>div{
+        margin: 0px;
+    }
     .nav_item_container3,.nav_item_container1,.nav_item_container2{
         display: none;
     }
-/* Main Body */
+    
+    /* Main Body */
+    .slideshow_img_container{
+        height: 74vh;
+    }
     .main_flex1,.main_flex2,.main_flex3{
         flex-wrap: wrap;
     }
     .Main_lastpannel{
         overflow-x: hidden;
+        grid-template-columns: auto auto;
     }
 }
