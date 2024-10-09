@@ -1,5 +1,8 @@
 @media (max-width : 400px) {
-/* Anouncement Bar */
+    .body{
+        overflow-x: hidden;   
+    }
+    /* Anouncement Bar */
     .Announcement-Bar{
         position: sticky;
         top: 0;
