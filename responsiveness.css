@@ -1,7 +1,7 @@
 @media (max-width : 400px) {
-    .body{
+    /* .body{
         overflow-x: hidden;   
-    }
+    } */
     /* Anouncement Bar */
     .Announcement-Bar{
         position: sticky;
@@ -23,5 +23,12 @@
     }
     .nav_item_container3,.nav_item_container1,.nav_item_container2{
         display: none;
+    }
+/* Main Body */
+    .main_flex1,.main_flex2,.main_flex3{
+        flex-wrap: wrap;
+    }
+    .Main_lastpannel{
+        overflow-x: hidden;
     }
 }

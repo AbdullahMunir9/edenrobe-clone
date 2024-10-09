@@ -214,7 +214,6 @@ main>div{
 .main_flex1,.main_flex2,.main_flex3{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 .main_flex1 a>img{
     width: 99.7%;
