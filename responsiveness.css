@@ -28,7 +28,7 @@
 
     /* Main Body */
     .slideshow_img_container{
-        height: 74vh;
+        height: 78vh;
     }
     .main_flex1,.main_flex2,.main_flex3{
         flex-wrap: wrap;
