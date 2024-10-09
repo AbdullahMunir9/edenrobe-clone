@@ -303,6 +303,7 @@ main>div{
 .Main_lastpannel{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .Main_lastpannel p{
     position: relative;
