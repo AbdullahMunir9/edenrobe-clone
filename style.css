@@ -113,6 +113,10 @@ body{
 .nav_item_container3 li{
     margin-right: 1em;
 }
+.nav_item_container3 select{
+    border: none;
+    background-color: transparent;
+}
 ul,li{
     display: inline-block;
 }

@@ -7,6 +7,7 @@ var navListitems = navUL.getElementsByTagName("li");
 var navUL2 = document.getElementById("Nav_ul2");
 var navListitems2 = navUL2.getElementsByTagName("li");
 
+var items_nav_cont3 = document.getElementsByTagName("i")
 
 Navbar.addEventListener("mouseenter",()=>{
     Navbar.classList.add("scrolled");
@@ -17,6 +18,9 @@ Navbar.addEventListener("mouseenter",()=>{
         nav_anchor[0].style.color = 'black';
     }
 
+    for(let i=0; i<items_nav_cont3.length ; i++){
+        items_nav_cont3[i].style.color = 'black';
+    }
 
     for(let j = 0; j < navListitems2.length; j++) {
         var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
@@ -34,6 +38,9 @@ Navbar.addEventListener("mouseleave",()=>{
             nav_anchor[0].style.color = 'white';
         }
 
+        for(let i=0; i<items_nav_cont3.length ; i++){
+            items_nav_cont3[i].style.color = 'white';
+        }
 
         for(let j = 0; j < navListitems2.length; j++) {
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
@@ -53,6 +60,9 @@ function whileScroll(){
             nav_anchor[0].style.color = 'black';
         }
     
+        for(let i=0; i<items_nav_cont3.length ; i++){
+            items_nav_cont3[i].style.color = 'black';
+        }
     
         for(let j = 0; j < navListitems2.length; j++) {
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
@@ -68,6 +78,9 @@ function whileScroll(){
             nav_anchor[0].style.color = 'white';
         }
     
+        for(let i=0; i<items_nav_cont3.length ; i++){
+            items_nav_cont3[i].style.color = 'white';
+        }
     
         for(let j = 0; j < navListitems2.length; j++) {
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
