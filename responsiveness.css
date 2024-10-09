@@ -18,12 +18,26 @@
         width: 100%;
         position: fixed;
         overflow-x: hidden;
+        justify-content: space-evenly;
     }
     .nav_item_container3,.nav_item_container1,.nav_item_container2{
         display: none;
     }
     .resp_cont1,.resp_cont2,.resp_cont3{
+        text-align: center;
         display: block;
+    }
+    .resp_cont1{
+        width: 25%;
+    }
+    #icon{
+        margin-right: 15%;
+    }
+    .resp_cont2{
+        width: 50%;
+    }
+    .resp_cont3{
+        width: 25%;
     }
 
     /* Main Body */

@@ -7,10 +7,11 @@ var navListitems = navUL.getElementsByTagName("li");
 var navUL2 = document.getElementById("Nav_ul2");
 var navListitems2 = navUL2.getElementsByTagName("li");
 
-var items_nav_cont3 = document.getElementsByTagName("i")
+var items_nav_cont3 = document.getElementsByTagName("i");
 
 Navbar.addEventListener("mouseenter",()=>{
     Navbar.classList.add("scrolled");
+
     for(let i=0 ;i<Navlogo.length; i++){
         Navlogo[i].src = 'Images/black_logo.png';
     }
@@ -28,6 +29,8 @@ Navbar.addEventListener("mouseenter",()=>{
         var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
         nav_anchor2[0].style.color = 'black';
     }
+
+    document.getElementsByClassName("loc-anchor")[0].style.color = 'black';
 });
 
 Navbar.addEventListener("mouseleave",()=>{
@@ -51,6 +54,8 @@ Navbar.addEventListener("mouseleave",()=>{
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
             nav_anchor2[0].style.color = 'white';
         }
+
+        document.getElementsByClassName("loc-anchor")[0].style.color = 'white';
     }
 });
 
@@ -58,6 +63,7 @@ Navbar.addEventListener("mouseleave",()=>{
 function whileScroll(){
     if(window.scrollY>50){
         Navbar.classList.add("scrolled");
+
         for(let i=0 ;i<Navlogo.length; i++){
             Navlogo[i].src = 'Images/black_logo.png';
         }
@@ -75,6 +81,8 @@ function whileScroll(){
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
             nav_anchor2[0].style.color = 'black';
         }
+
+        document.getElementsByClassName("loc-anchor")[0].style.color = 'black';
     }
     else{
         Navbar.classList.remove("scrolled");
@@ -96,6 +104,8 @@ function whileScroll(){
             var nav_anchor2 = navListitems2[j].getElementsByTagName("a");
             nav_anchor2[0].style.color = 'white';
         }
+
+        document.getElementsByClassName("loc-anchor")[0].style.color = 'white';
     }
 }
 
