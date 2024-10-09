@@ -25,10 +25,10 @@
     .nav_item_container3,.nav_item_container1,.nav_item_container2{
         display: none;
     }
-    
+
     /* Main Body */
     .slideshow_img_container{
-        height: 74vh;
+        height: 100vh;
     }
     .main_flex1,.main_flex2,.main_flex3{
         flex-wrap: wrap;
