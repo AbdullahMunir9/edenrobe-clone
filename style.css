@@ -38,7 +38,7 @@ body{
     overflow: hidden;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
 .Announcement-Bar a{
     color: red;
@@ -90,7 +90,7 @@ body{
     align-items: center;
     position: fixed;
     border-bottom: 1px solid white;
-    z-index: 2;
+    z-index: 5;
     transition: background-color 0.3s linear;
     box-shadow: 0px 0px 10px rgb(176, 171, 171);
 }
@@ -290,7 +290,7 @@ main>div{
     background-color: white;
     border-radius: 50%;
     transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 4;
+    z-index: 1;
 }
 .carousel_container .prev_button{
     left: 10px;
