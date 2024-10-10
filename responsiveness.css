@@ -54,6 +54,9 @@
         overflow-x: hidden;
         grid-template-columns: auto auto;
     }
+    .Auto_scroll_button{
+        left: 80%;
+    }
 
     /* Footer */
     .footer_links{
