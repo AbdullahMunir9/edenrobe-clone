@@ -59,12 +59,18 @@
     }
 
     /* Footer */
-    .footer_links,.footpannel2,.footpannel3,.footpannel4{
+    .footer_links,.footpannel2{
         display: none;
     }
     .footpannel1{
         padding-top: 9%;
         padding-bottom: 9%;
+    }
+    .footpannel3{
+        display: block;
+    }
+    .footpannel3 div{
+        margin: 2%;
     }
     .footer_logo{
         padding: 3%;
