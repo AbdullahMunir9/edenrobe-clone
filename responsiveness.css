@@ -50,12 +50,17 @@
     .main_flex1,.main_flex2,.main_flex3{
         flex-wrap: wrap;
     }
+    .Auto_scroll_button{
+        left: 80%;
+    }
+
     .Main_lastpannel{
         overflow-x: hidden;
         grid-template-columns: auto auto;
+        padding: 2%;
     }
-    .Auto_scroll_button{
-        left: 80%;
+    .Main_lastpannel img{
+        height: 60px;
     }
 
     /* Footer */
