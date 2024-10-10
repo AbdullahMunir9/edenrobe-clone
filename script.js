@@ -109,7 +109,26 @@ function whileScroll(){
     }
 }
 
+Auto_scroll_button = document.querySelector(".Auto_scroll_button");
+function whileScroll2(){
+    if (window.scrollY > 500) {
+        Auto_scroll_button.style.opacity = '1';
+        Auto_scroll_button.style.visibility = 'visible';
+        Auto_scroll_button.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
+    } else {
+        Auto_scroll_button.style.opacity = '0';
+        Auto_scroll_button.style.visibility = 'hidden';
+    }
+}
+Auto_scroll_button.addEventListener("click",()=>{
+    window.scrollTo({
+        top : '0',
+        behaviour: 'smooth'
+    });
+})
+
 window.addEventListener("scroll",whileScroll);
+window.addEventListener("scroll",whileScroll2);
 
 // carousel Animations 
 

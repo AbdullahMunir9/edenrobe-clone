@@ -328,6 +328,20 @@ main>div{
     float: left;
 }
 
+/* Auto scroll button */
+.Auto_scroll_button{
+    position: fixed;
+    background-color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    top: 87%;
+    left: 94%;
+    opacity: 0;
+    visibility: hidden;
+    border-color: transparent;
+}
+
 /* Footer  */
 
 /* Footer Animations */
