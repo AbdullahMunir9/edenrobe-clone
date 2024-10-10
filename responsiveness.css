@@ -58,9 +58,15 @@
         overflow-x: hidden;
         grid-template-columns: auto auto;
         padding: 2%;
+        padding-top: 22%;
+        padding-bottom: 22%;
+        gap: 12px;
     }
     .Main_lastpannel img{
         height: 60px;
+    }
+    .Main_lastpannel p{
+        margin: 2%;
     }
 
     /* Footer */
