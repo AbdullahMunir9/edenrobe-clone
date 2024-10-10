@@ -62,6 +62,10 @@
     .footer_links,.footpannel2,.footpannel3,.footpannel4{
         display: none;
     }
+    .footpannel1{
+        padding-top: 6%;
+        padding-bottom: 6%;
+    }
     .resp_footer{
         display: block;
     }
