@@ -331,6 +331,7 @@ main>div{
 /* Auto scroll button */
 .Auto_scroll_button{
     position: fixed;
+    font-size: large;
     background-color: rgb(158, 157, 157);
     border-radius: 50%;
     height: 50px;
@@ -388,6 +389,9 @@ footer{
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 3%;
+}
+.resp_footer{
+    display: none;
 }
 
 /* Footer Pannel 1 */

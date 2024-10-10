@@ -59,7 +59,11 @@
     }
 
     /* Footer */
-    .footer_links{
+    .footer_links,.footpannel2,.footpannel3,.footpannel4{
         display: none;
     }
+    .resp_footer{
+        display: block;
+    }
+
 }
