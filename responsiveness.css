@@ -63,8 +63,15 @@
         display: none;
     }
     .footpannel1{
-        padding-top: 6%;
-        padding-bottom: 6%;
+        padding-top: 9%;
+        padding-bottom: 9%;
+    }
+    .footer_logo{
+        padding: 5%;
+    }
+    details{
+        border-top: 1px solid white;
+        padding: 5%;
     }
     .resp_footer{
         display: block;
