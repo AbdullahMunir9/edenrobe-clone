@@ -302,7 +302,7 @@ main>div{
 }
 
 /* Main Last Pannel */
-.Main_lastpannel{
+/* .Main_lastpannel{
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding-left: 5%;
@@ -326,6 +326,22 @@ main>div{
 .Main_lastpannel img{
     height: 30%;
     float: left;
+} */
+.Main_lastpannel{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 7%;
+}
+.Main_lastpannel p,.Main_lastpannel a{
+    color: black;
+}
+.Main_lastpannel img{
+    height: 100px;
+}
+.Main_lastpannel>div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 /* Auto scroll button */
