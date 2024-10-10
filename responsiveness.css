@@ -72,6 +72,14 @@
     .footpannel3 div{
         margin: 2%;
     }
+    .footpannel4 p{
+        color: rgb(198, 193, 184);
+        margin-bottom: 4%;
+    }
+    .footer_dropDown,.footer_dropDown>option{
+        border-radius: 0px;
+        width: 45%;
+    }
     .footer_logo{
         padding: 3%;
     }
@@ -93,5 +101,6 @@
     .resp_footer{
         display: block;
     }
+
 
 }
