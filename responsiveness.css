@@ -87,7 +87,8 @@
     .arrow_button{
         position: relative;
         top: 3px;
-        height: 42px;
+        right: 3px;
+        height: 43px;
     }
     .footer_logo{
         padding: 3%;
