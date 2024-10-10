@@ -66,7 +66,7 @@
         padding-top: 9%;
         padding-bottom: 9%;
     }
-    .footpannel3{
+    .footpannel3,.resp_footer_list_container,.resp_footer{
         display: block;
     }
     .footpannel3 div{
@@ -76,7 +76,11 @@
         color: rgb(198, 193, 184);
         margin-bottom: 4%;
     }
+    .resp_footer_list_container{
+        margin-top: 4%;
+    }
     .footer_dropDown,.footer_dropDown>option{
+        padding: 3%;
         border-radius: 0px;
         width: 45%;
     }
@@ -98,9 +102,4 @@
         border-top: 1px solid white;
         padding: 5%;
     }
-    .resp_footer{
-        display: block;
-    }
-
-
 }
