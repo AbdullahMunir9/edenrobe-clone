@@ -85,6 +85,8 @@
         width: 45%;
     }
     .arrow_button{
+        position: relative;
+        top: 3px;
         height: 42px;
     }
     .footer_logo{
