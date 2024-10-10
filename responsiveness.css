@@ -67,7 +67,15 @@
         padding-bottom: 9%;
     }
     .footer_logo{
-        padding: 5%;
+        padding: 3%;
+    }
+    summary{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    summary::after{
+        content: '+';
     }
     details{
         border-top: 1px solid white;
