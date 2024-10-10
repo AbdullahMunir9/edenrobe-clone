@@ -343,6 +343,9 @@ main>div{
     justify-content: space-evenly;
     align-items: center;
 }
+.Main_lastpannel_heading{
+    font-weight: bolder;
+}
 
 /* Auto scroll button */
 .Auto_scroll_button{
