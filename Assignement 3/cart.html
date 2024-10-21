@@ -20,18 +20,7 @@
             <div class="mb-3">
                 <label for="fullName" class="form-label">ENTER YOUR NAME</label>
                 <input type="text" class="form-control" id="fullName" placeholder="Full Name">
-            </div>
-
-            <!-- City -->
-            <div class="mb-3">
-                <label for="city" class="form-label">SELECT YOUR CITY</label>
-                <select class="form-select" id="city" aria-label="Select City">
-                    <option selected>Select City</option>
-                    <option value="1">City 1</option>
-                    <option value="2">City 2</option>
-                    <option value="3">City 3</option>
-                </select>
-                <div class="form-text text-danger">* Please select city</div>
+                <div class="form-text text-danger errormessage text-danger" id="fullNameerror" style="display: none;">* Please Enter Name</div>
             </div>
 
             <!-- Phone Number -->
@@ -39,18 +28,31 @@
                 <label for="phone" class="form-label">ENTER YOUR PHONE NUMBER</label>
                 <div class="input-group">
                     <span class="input-group-text" id="countryCode">+92</span>
-                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" aria-describedby="countryCode">
+                    <input type="tel" class="form-control " id="phone" placeholder="Phone Number" aria-describedby="countryCode">
+                    <div class="form-text text-danger errormessage text-danger w-100" id="phoneerror" style="display: none;">* Please Enter Phone No</div>
                 </div>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+                <label for="city" class="form-label">SELECT YOUR CITY</label>
+                <select class="form-select" id="city" aria-label="Select City">
+                    <option selected>Sahiwal</option>
+                    <option value="1">Faisalabad</option>
+                    <option value="2">Lahore</option>
+                    <option value="3">Karachi</option>
+                </select>
             </div>
 
             <!-- Checkout Button -->
             <button type="submit" class="btn btn-danger w-100">
-                CHECKOUT • PKR 3,096
+                CHECKOUT
             </button>
         </form>
     </div>
     
     <!-- Bootstrap JS -->
+     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

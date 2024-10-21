@@ -163,7 +163,7 @@ ul,li{
 
 .slideshow_img_container{
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-height: 100vh;
 }
 .slideshow_images{

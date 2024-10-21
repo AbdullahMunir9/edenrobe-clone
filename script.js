@@ -111,7 +111,7 @@ function whileScroll(){
 
 Auto_scroll_button = document.querySelector(".Auto_scroll_button");
 function whileScroll2(){
-    if (window.scrollY > 500) {
+    if (window.scrollY > 800) {
         Auto_scroll_button.style.opacity = '1';
         Auto_scroll_button.style.visibility = 'visible';
         Auto_scroll_button.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
