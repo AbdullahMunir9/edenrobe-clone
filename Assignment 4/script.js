@@ -26,14 +26,14 @@ function delete_diptis (){
 
 function handleFormSubmission(event) {
     event.preventDefault();
-    let Dipti_Id = $("#createBtn").attr("data-id");
+    // let Dipti_Id = $("#createBtn").attr("data-id");
     var name = $("#createName").val();
     var email = $("#createemail").val();
     var src = $("#createurl").val();
     $.ajax({
         url: "https://reqres.in/api/users/",
         method: "POST",
-        data: { name, email },
+        data: { name, email ,src},
         success: function (response) {
             // Simulate adding the new story to the list by updating the DOM manually
             $("#Data_list").prepend(`
