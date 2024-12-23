@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/women.css">
+</head>
+<body>
+    <div class="List_Container">
+        <% for(let i=0; i < product.length ; i++ ){%>
+            <li class="main_list">
+                <img class="main_imgs" src="<%= product[i].src %>" alt="">
+                <p><%= product[i].description %></p>
+                <p class="price">PKR : <%= product[i].price %></p>
+            </li>
+        <% } %>
+    </div>
+    
+    <hr>
+    <div class="Main_description">
+        <h3>Elevate Your Style with edenrobe:</h3>
+        <p>In the ever-evolving world of fashion, edenrobe stands as a beacon of style, offering a diverse range of women's wear that caters to every fashion enthusiast's taste. From stitched dresses to women's ethnic wear, our online store is a treasure trove of contemporary fashion that combines elegance and comfort seamlessly.</p>
+        <h3>Women's Wear for Every Occasion:</h3>
+        <p>At edenrobe, we understand that every woman is unique, and her wardrobe should reflect her individuality. Our extensive collection of women's wear is designed to cater to various occasions and preferences. Whether you're looking for casual chic or a more formal ensemble, we've got you covered.</p>
+        <h3>Stitched Dresses that Redefine Elegance:</h3>
+        <p>Our stitched dresses collection is a celebration of sophistication and modern aesthetics. Each piece is crafted with precision, ensuring a perfect fit and attention to detail. From flowing unstitched dresses to tailored silhouettes, our range captures the essence of contemporary fashion trends.</p>
+        <h3>Explore Women's Ethnic Wear:</h3>
+        <p>For those who appreciate the timeless allure of ethnic wear, edenrobe presents a captivating assortment of women's ethnic wear. Immerse yourself in the rich cultural tapestry with intricately designed kurti, co-ord sets, shalwar suits, and kameez shalwar. Our collection showcases a perfect blend of tradition and contemporary flair, making it an ideal choice for festive occasions and celebrations.</p>
+        <h3>Convenience Meets Style with Women's Clothing Online:</h3>
+        <p>In the fast-paced digital era, edenrobe brings the world of fashion to your fingertips. Shop for the latest trends in women's clothing online, right from the comfort of your home. Our user-friendly website ensures a seamless shopping experience, allowing you to browse through our diverse range and make informed choices effortlessly.</p>
+        <h3>Versatility in Women's Wear: Unstitched and Ready-to-Wear:</h3>
+        <p>edenrobe caters to the dynamic needs of modern women with a versatile range of options. Whether you prefer the creative freedom of unstitched fabrics or the convenience of ready-to-wear ensembles, our collection has something for everyone. Dive into the world of women's unstitched fabrics for a personalized touch, or explore our ready-to-wear line for fashion-forward choices that keep up with your on-the-go lifestyle.</p>
+    </div>
+</body>
+</html>
