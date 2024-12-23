@@ -1,0 +1,69 @@
+<h4>Edit Product</h4>
+
+<form action="" class="container" method="post">
+
+    <select name="categoryId" id="">
+        <% for(let i = 0; i < categories.length; i++) { %>
+            <option value="<%= categories[i].category %>" 
+                <% if (product.categoryId === categories[i].category) { %> selected <% } %>>
+                <%= categories[i].category %>
+            </option>
+        <% } %>
+    </select>
+
+    <div class="form-group">
+        <label for="">Description</label>
+        <textarea name="description" type="text" class="form-control"><%= product.description %></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="">Price </label>
+        <input name="price" type="Number" class="form-control" value="<%= product.price %>"/>
+    </div>
+
+    <div class="form-group">
+        <label for="S_Quantity">S_Quantity </label>
+        <input name="S_Quantity" type="Number" class="form-control" 
+        <% if(product.S_Quantity){ %>
+            value="<%= product.S_Quantity %>"
+        <% } else { %>
+            value="0"
+        <% } %>
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="M_Quantity">M_Quantity </label>
+        <input name="M_Quantity" type="Number" class="form-control" 
+        <% if(product.M_Quantity){ %>
+            value="<%= product.M_Quantity %>"
+        <% } else { %>
+            value="0"
+        <% } %>
+        />
+        
+    </div>
+
+    <div class="form-group">
+        <label for="L_Quantity">L_Quantity </label>
+        <input name="L_Quantity" type="Number" class="form-control" 
+        <% if(product.L_Quantity){ %>
+            value="<%= product.L_Quantity %>"
+        <% } else { %>
+            value="0"
+        <% } %>
+        />
+    </div>
+
+    <div class="form-group my-3">
+        <label for="">In_Stock?  
+        <input name="In_Stock" type="checkbox" class="form-check-input" <% if (product.In_Stock) { %>
+         checked="checked"
+        <% } %> />
+    </label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info">Edit Record</button>
+    </div>
+
+</form>

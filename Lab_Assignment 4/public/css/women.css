@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Archivo Narrow', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f5f5f5; /* Light background color */
+    color: #000; /* Default text color */
+}
+
+.Main_description {
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Main_description p,
+.Main_description h3 {
+    padding: 5px;
+    color: black;
+}
+
+hr{
+    margin-top: 8%;
+}
+.List_Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
+}
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 80px; /* Position near the bottom of the card */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust for true centering */
+    background-color: #4c96e7; /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Ensure it's not interactable */
+    transition: opacity 0.3s, visibility 0.3s; /* Smooth appearance effect */
+}
+
+.main_list {
+    background-color: #fff; /* White card background */
+    width: 280px; /* Set a fixed width for product cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for card */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+}
+.main_list:hover .add-to-cart-btn {
+    opacity: 1; /* Fully visible on hover */
+    visibility: visible; /* Allow interaction */
+}
+.main_list:hover {
+    transform: translateY(-5px); /* Slightly lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.main_imgs {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.main_list p {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.main_list .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+}
+
+.image-grid {
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto; /* Center the grid */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 20px 20px 50px; /* Increase the bottom padding to push the images down */
+    position: relative;
+    top: 100px;
+  }
+  
+  .image-container {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image-container img {
+    width: 100%; /* Reduce the width of the images further */
+    height: 60%; /* Set the height to match the width for a perfect circle */
+    border-radius: 50%; /* Make the images perfectly round */
+    object-fit: auto;
+  }
+  h3{
+    color: #000;
+  }
+  
+.image-container h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.pagination .page-item.disabled .page-link {
+    pointer-events: none;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-color: #ddd;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.page-link {
+    position: relative;
+    /* z-index: 1000; */
+    pointer-events: auto;
+}

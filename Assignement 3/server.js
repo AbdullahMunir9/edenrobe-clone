@@ -13,6 +13,14 @@ app.get("/",(req,res)=>{
     res.render("home");
 })
 
+
+
+
+
+app.get("/about",(req,res)=>{
+    res.send("about")
+})
+
 app.listen(5000,() => {
     console.log("Server started at location: 5000")
 })

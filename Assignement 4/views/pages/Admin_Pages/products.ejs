@@ -1,0 +1,87 @@
+<h3>Products</h3>
+
+<div class="container mt-5 my-5">
+    <div class="row align-items-center justify-content-between">
+        <% if(page){ %>
+            <div class="col-md-6 d-flex justify-content-start">
+                <nav aria-label="Product page navigation">
+                    <ul class="pagination m-0">
+                        <li class="page-item <%= page === 1 ? 'disabled' : '' %>">
+                            <a class="page-link" href="/admin/products/<%= page > 1 ? page - 1 : totalPages %>" tabindex="-1" aria-disabled="<%= page === 1 ? 'true' : 'false' %>">Previous</a>
+                        </li>
+                        <% for( let index = 1; index <= totalPages; index++ ) { %>
+                            <li class="page-item <%= page === index ? 'active' : '' %>">
+                                <a class="page-link" href="/admin/products/<%= index %>"><%= index %></a>
+                            </li>
+                        <% } %>
+                        <li class="page-item <%= page === totalPages ? 'disabled' : '' %>">
+                            <a class="page-link" href="/admin/products/<%= page < totalPages ? page + 1 : 1 %>">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        <% } %>
+        <div class="col-md-6 d-flex justify-content-end">
+            <div class="dropdown me-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort by
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                    <li><a class="dropdown-item" href="/admin/products/<%= page %>/Quantity" data-sort="Quantity">Quantity</a></li>
+                    <li><a class="dropdown-item" href="/admin/products/<%= page %>/All" data-sort="All">Default</a></li>
+                    <li><a class="dropdown-item" href="/admin/products/<%= page %>/price" data-sort="price">Price</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="display: flex; justify-content: space-between; align-items: center;" class="my-2">
+    <div>
+        <a href="/admin/products/create" class="btn btn-info">Create New Product</a>
+        <span>Products Shown : <%= Productshown + 1 %> __ <%= pageSize * page %></span>
+    </div>
+    <div style="display: flex; gap: 20px;">
+        <span>Total Products : <%= totalRecords %></span>
+        <span>Page No : <%= page %></span>
+    </div>
+</div>
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>T_Quantity</th>
+            <th>Quantities</th>
+            <th>In_Stock</th>
+            <th>Picture</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0; i < products.length ; i++ ){%>
+            <tr>
+                <td><%= products[i]._id %></td>
+                <td><%= products[i].description %></td>
+                <td><%= products[i].price %></td>
+                <td><%= products[i].T_Quantity %></td>
+                <td>
+                    <div class="d-flex flex-column">
+                        <span>S_Quantity: <%= products[i].S_Quantity %></span>
+                        <span>M_Quantity: <%= products[i].M_Quantity %></span>
+                        <span>L_Quantity: <%= products[i].L_Quantity %></span>
+                    </div>
+                </td>
+                <td><%= products[i].In_Stock %></td>
+                <td><img src="/<%= products[i].picture %>" width="100px"/> </td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[i]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/products/delete/<%= products[i]._id %>" class="btn btn-danger">Del</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
