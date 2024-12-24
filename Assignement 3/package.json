@@ -1,16 +1,19 @@
 {
-  "name": "assignement-3",
+  "name": "edenrobe_serverside",
   "version": "1.0.0",
-  "description": "Assignment 3",
+  "description": "edenrobe_serverside",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "Abdullah Munir",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7"
   }
 }
