@@ -1,0 +1,249 @@
+<div class="container-fluid py-4">
+    <div class="row mb-4">
+        <div class="col-xl-4 col-md-4 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Total Orders</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= TotalOrders %></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-4 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Total Revenue: <%= new Date().toLocaleString('default', { month: 'long' }) %></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$
+                                <% 
+                                    let monthlyRevenue = 0;
+                                    const currentMonth = new Date().getMonth();
+                                    const currentYear = new Date().getFullYear();
+                                    
+                                    if(Orders && Orders.length > 0) {
+                                        Orders.forEach(order => {
+                                            const orderDate = new Date(order.orderDate);
+                                            if(orderDate.getMonth() === currentMonth && 
+                                               orderDate.getFullYear() === currentYear) {
+                                                monthlyRevenue += parseFloat(order.total);
+                                            }
+                                        });
+                                    }
+                                %>
+                                <%= monthlyRevenue.toFixed(2) %>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-4 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Recently Deleted Products</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= TotalDeleted %></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-trash fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Move dropdown to the left -->
+                <div class="dropdown me-auto">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort By
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                        <li><a class="dropdown-item" href="/admin/dashboard/All" data-sort="All">Default</a></li>
+                        <li><a class="dropdown-item" href="/admin/dashboard/dsc" data-sort="Quantity">Date-Dsc</a></li>
+                        <li><a class="dropdown-item" href="/admin/dashboard/asc" data-sort="price">Date-Asc</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Center buttons -->
+                <div class="text-center mx-auto">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary active" id="ordersBtn" onclick="toggleView('orders')">
+                            Recent Orders
+                        </button>
+                        <button type="button" class="btn btn-danger" id="deletedBtn" onclick="toggleView('deleted')">
+                            Recently Deleted Products
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Form and Show All button on the right -->
+                <form method="get" class="ms-auto">
+                    <div id="date">
+                        <input type="date" id="date" name="date" class="form-control-sm d-inline me-2" style="width: auto;">
+                        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+                    </div>
+                </form>
+                <a href="/admin/dashboard" class="btn btn-primary btn-sm ms-2">
+                    Show All
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow mb-4" id="ordersTable">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Recent Orders</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>City</th>
+                                    <th>Address</th>
+                                    <th>Order Date</th>
+                                    <th>Total</th>
+                                    <th>Products</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(Orders && Orders.length > 0) { %>
+                                    <% for(let i = 0; i < Orders.length; i++) { %>
+                                        <tr>
+                                            <td><%= Orders[i].UserName %></td>
+                                            <td><%= Orders[i].EmailAddress %></td>
+                                            <td><%= Orders[i].city %></td>
+                                            <td><%= Orders[i].address %></td>
+                                            <td><%= Orders[i].orderDate %></td>
+                                            <td>$<%= Orders[i].total %></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-info" type="button" 
+                                                        data-bs-toggle="collapse" 
+                                                        data-bs-target="#products<%= Orders[i]._id %>" 
+                                                        aria-expanded="false">
+                                                    View Products
+                                                </button>
+                                                <div class="collapse mt-2" id="products<%= Orders[i]._id %>">
+                                                    <% if(Orders[i].products && Orders[i].products.length > 0) { %>
+                                                        <% for(let j = 0; j < Orders[i].products.length; j++) { %>
+                                                            <div class="card card-body mb-2">
+                                                                <p class="mb-1"><strong>Description:</strong> <%= Orders[i].products[j].description %></p>
+                                                                <p class="mb-1"><strong>Price:</strong> $<%= Orders[i].products[j].price %></p>
+                                                                <p class="mb-1"><strong>Size:</strong> <%= Orders[i].products[j].size %></p>
+                                                                <p class="mb-0"><strong>Quantity:</strong> <%= Orders[i].products[j].quantity %></p>
+                                                            </div>
+                                                        <% } %>
+                                                    <% } else { %>
+                                                        <div class="card card-body mb-2">
+                                                            <p class="mb-0">No products found in this order</p>
+                                                        </div>
+                                                    <% } %>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="5" class="text-center">No orders found</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow mb-4" id="deletedTable" style="display: none;">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-danger">Recently Deleted Products</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Category ID</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(RD && RD.length > 0) { %>
+                                    <% for(let i = 0; i < RD.length; i++) { %>
+                                        <tr>
+                                            <td><%= RD[i].description %></td>
+                                            <td>$<%= RD[i].price %></td>
+                                            <td><%= RD[i].categoryId %></td>
+                                            <td>
+                                                <% if(RD[i].picture) { %>
+                                                    <img src="/<%= RD[i].picture %>" alt="Product" class="img-thumbnail" style="max-width: 50px;">
+                                                <% } else { %>
+                                                    <span class="text-muted">No image</span>
+                                                <% } %>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="4" class="text-center">No deleted products found</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleView(view) {
+    const date = document.getElementById("date");
+    const ordersTable = document.getElementById('ordersTable');
+    const deletedTable = document.getElementById('deletedTable');
+    const ordersBtn = document.getElementById('ordersBtn');
+    const deletedBtn = document.getElementById('deletedBtn');
+
+    if (view === 'orders') {
+        date.style.display = 'block';
+        ordersTable.style.display = 'block';
+        deletedTable.style.display = 'none';
+        ordersBtn.classList.add('active');
+        deletedBtn.classList.remove('active');
+    } else {
+        date.style.display = 'none';
+        ordersTable.style.display = 'none';
+        deletedTable.style.display = 'block';
+        ordersBtn.classList.remove('active');
+        deletedBtn.classList.add('active');
+    }
+}
+</script>

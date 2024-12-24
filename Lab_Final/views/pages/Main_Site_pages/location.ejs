@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outlet Locations</title>
+    <style>
+        #map { 
+            height: 600px; 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <button class="Auto_scroll_button">
+        &#9757;
+    </button>
+
+
+    <script>
+        
+        const outlets = JSON.parse('<%- JSON.stringify(outlets) %>');
+        console.log(outlets);
+    </script>
+
+    
+    <script>
+
+        const API_KEY = 'AIzaSyBULTMQMBNx94xl-ys2iqbfUFlesI8tP0E';
+
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5.7,
+                center: { 
+                    lat: 30.187681736064622, 
+                    lng: 71.48562220984628 
+                }
+            });
+
+
+            outlets.forEach(outlet => {
+                const marker = new google.maps.Marker({
+                    position: { 
+                        lat: outlet.latitude, 
+                        lng: outlet.longitude 
+                    },
+                    map: map,
+                    title: outlet.name
+            });
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div>
+                            <h3>${outlet.name}</h3>
+                            <p>${outlet.address}</p>
+                        </div>
+                    `
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        function loadMapScript() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap&libraries=places&loading=async`;
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadMapScript;
+    </script>
+</body>
+</html>
