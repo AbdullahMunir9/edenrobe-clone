@@ -1,6 +1,7 @@
 require('dotenv').config();
 const URI = process.env.MONGO_URI;
 const session_secret = process.env.Session_SECRET;
+const API_KEY = process.env.API_KEY;
 
 const express  = require("express");
 let app = express();
@@ -231,7 +232,7 @@ app.get("/",(req,res)=>{
 app.get("/locate",async (req,res)=>{
     let Location = require("./models/location.models");
     let outlets = await Location.find()
-    res.render("pages/Main_Site_pages/location",{ outlets });
+    res.render("pages/Main_Site_pages/location",{ outlets,API_KEY });
 })
 
 
