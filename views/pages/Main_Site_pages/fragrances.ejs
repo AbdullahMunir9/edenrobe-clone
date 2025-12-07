@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/women.css">
+    <style>
+        body{
+            background-color: #3b3b4f;
+        }
+        .navigation{
+            margin-top: 3%;
+            margin-left: 2%;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-grid">
+        <div class="image-container">
+          <img class="navimg" src="Images/F1.png" alt="Unstitched">
+          <h3>Women Body Mists</h3>
+        </div>
+        <div class="image-container">
+          <img class="navimg" src="Images/F2.png" alt="Ready To Wear">
+          <h3>Men Fragrance</h3>
+        </div>
+        <div class="image-container">
+          <img class="navimg" src="Images/F3.png" alt="Festive">
+          <h3>Women Fragrance</h3>
+        </div>
+        <div class="image-container">
+          <img class="navimg" src="Images/F4.png" alt="Woman Unstitched Merak">
+          <h3>Unisex Fragrance</h3>
+        </div>
+        <div class="image-container">
+          <img class="navimg" src="Images/women5.png" alt="Sale">
+          <h3>Sale</h3>
+        </div>
+    </div>
+
+    <nav aria-label="Product page navigation" class="navigation">
+        <ul class="pagination justify-content-center" id="pagination">
+          <!-- Pagination links will be dynamically generated here -->
+        </ul>
+    </nav>
+
+    <div class="List_Container" id="product-list">
+        <!-- Products will be dynamically fetched and displayed here -->
+    </div>
+    
+    <hr>
+    <div class="Main_description">
+        <h3>Elevate Your Style with edenrobe:</h3>
+        <p>In the ever-evolving world of fashion, edenrobe stands as a beacon of style, offering a diverse range of women's wear that caters to every fashion enthusiast's taste. From stitched dresses to women's ethnic wear, our online store is a treasure trove of contemporary fashion that combines elegance and comfort seamlessly.</p>
+        <h3>Women's Wear for Every Occasion:</h3>
+        <p>At edenrobe, we understand that every woman is unique, and her wardrobe should reflect her individuality. Our extensive collection of women's wear is designed to cater to various occasions and preferences. Whether you're looking for casual chic or a more formal ensemble, we've got you covered.</p>
+        <h3>Stitched Dresses that Redefine Elegance:</h3>
+        <p>Our stitched dresses collection is a celebration of sophistication and modern aesthetics. Each piece is crafted with precision, ensuring a perfect fit and attention to detail. From flowing unstitched dresses to tailored silhouettes, our range captures the essence of contemporary fashion trends.</p>
+        <h3>Explore Women's Ethnic Wear:</h3>
+        <p>For those who appreciate the timeless allure of ethnic wear, edenrobe presents a captivating assortment of women's ethnic wear. Immerse yourself in the rich cultural tapestry with intricately designed kurti, co-ord sets, shalwar suits, and kameez shalwar. Our collection showcases a perfect blend of tradition and contemporary flair, making it an ideal choice for festive occasions and celebrations.</p>
+        <h3>Convenience Meets Style with Women's Clothing Online:</h3>
+        <p>In the fast-paced digital era, edenrobe brings the world of fashion to your fingertips. Shop for the latest trends in women's clothing online, right from the comfort of your home. Our user-friendly website ensures a seamless shopping experience, allowing you to browse through our diverse range and make informed choices effortlessly.</p>
+        <h3>Versatility in Women's Wear: Unstitched and Ready-to-Wear:</h3>
+        <p>edenrobe caters to the dynamic needs of modern women with a versatile range of options. Whether you prefer the creative freedom of unstitched fabrics or the convenience of ready-to-wear ensembles, our collection has something for everyone. Dive into the world of women's unstitched fabrics for a personalized touch, or explore our ready-to-wear line for fashion-forward choices that keep up with your on-the-go lifestyle.</p>
+    </div>
+    <button class="Auto_scroll_button">
+        &#9757;
+    </button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const fetchProducts = (page = 1) => {
+            $.ajax({
+                url: `/api/products?page=${page}&category=Fragrances`, // API endpoint to fetch products
+                method: 'GET',
+                success: function (response) {
+                const { products, totalRecords, totalPages, currentPage } = response;
+
+                // Update product list
+                const productList = $('#product-list');
+                productList.empty();
+                products.forEach(product => {
+                    productList.append(`
+                    <li class="main_list">
+                        <img class="main_imgs" src="${product.picture}" alt="">
+                        <p style="color: black;">${product.description}</p>
+                        <p class="price">PKR : ${product.price}</p>
+                        <button class="add-to-cart-btn"><a href="/add-to-cart/fragrances/${product._id} %>"> Add To Cart</a></button>
+                        <button class="wishlist-btn"><a href="/add-to-wishlist/fragrances/${product._id}"> Add To Wishlist</a></button>
+                    </li>
+                    `);
+                });
+
+                // Update total products
+                $('#total-products').text(`Total Products: ${totalRecords}`);
+
+                // Update pagination
+                const pagination = $('#pagination');
+                pagination.empty();
+
+                // Previous button
+                pagination.append(`
+                    <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <button class="page-link" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+                    </li>
+                `);
+
+                // Page numbers
+                for (let i = 1; i <= totalPages; i++) {
+                    pagination.append(`
+                    <li class="page-item ${currentPage === i ? 'active' : ''}">
+                        <button class="page-link" data-page="${i}">${i}</button>
+                    </li>
+                    `);
+                }
+
+                // Next button
+                pagination.append(`
+                    <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <button class="page-link" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+                    </li>
+                `);
+                },
+                error: function (err) {
+                console.error('Error fetching products:', err);
+                }
+            });
+            };
+
+            // Fetch initial products
+            fetchProducts();
+
+            // Handle pagination clicks
+            $('#pagination').on('click', '.page-link', function () {
+            const page = $(this).data('page');
+            if (page) fetchProducts(page);
+            });
+        });
+
+    </script>
+<script>
+    // Get query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const check = urlParams.get('check');
+
+    // Show an alert if check is false
+    if (check === 'false') {
+        alert("This Product is outof stock");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+@media (max-width : 400px) {
+    /* Anouncement Bar */
+    .Announcement-Bar{
+        position: sticky;
+        top: 0;
+    }
+    .Scroller{
+        animation: textscroller 10s linear infinite ;
+    }
+    .Announcement-Bar-text{
+        margin-right: 15%;
+        font-size: 9px;
+    }
+
+    /* Nav bar */
+    .NavBar{
+        height: 12%;
+        width: 100%;
+        position: fixed;
+        overflow-x: hidden;
+        justify-content: space-evenly;
+    }
+    .nav_item_container3,.nav_item_container1,.nav_item_container2{
+        display: none;
+    }
+    .resp_cont1,.resp_cont2,.resp_cont3{
+        text-align: center;
+        display: block;
+    }
+    .resp_cont1{
+        width: 25%;
+    }
+    #icon{
+        margin-right: 15%;
+    }
+    .resp_cont2{
+        width: 50%;
+    }
+    .resp_cont3{
+        width: 25%;
+    }
+
+    /* Main Body */
+    main>div{
+        margin: 0px;
+    }
+    .slideshow_img_container{
+        height: 80vh;
+    }
+    .main_flex1,.main_flex2,.main_flex3{
+        flex-wrap: wrap;
+    }
+    .Auto_scroll_button{
+        left: 80%;
+    }
+
+    .Main_lastpannel{
+        overflow-x: hidden;
+        grid-template-columns: auto auto;
+        padding: 2%;
+        padding-top: 22%;
+        padding-bottom: 22%;
+        gap: 12px;
+    }
+    .Main_lastpannel img{
+        height: 60px;
+    }
+    .Main_lastpannel p{
+        margin: 2%;
+    }
+
+    /* Footer */
+    .footer_links,.footpannel2{
+        display: none;
+    }
+    .footpannel1{
+        padding-top: 9%;
+        padding-bottom: 9%;
+    }
+    .footpannel3,.resp_footer_list_container,.resp_footer{
+        display: block;
+    }
+    .footpannel3 div{
+        margin: 2%;
+    }
+    .footpannel4 p{
+        color: rgb(198, 193, 184);
+        margin-bottom: 4%;
+    }
+    .resp_footer_list_container{
+        margin-top: 4%;
+    }
+    .footer_dropDown,.footer_dropDown>option{
+        padding: 6%;
+        border-radius: 0px;
+        width: 45%;
+    }
+    .arrow_button{
+        position: relative;
+        top: 2px;
+        right: 4px;
+        height: 44px;
+    }
+    .footer_logo{
+        padding: 3%;
+    }
+    summary::-webkit-details-marker {
+        display: none;
+    }
+    summary{
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    summary::after{
+        content: '+';
+    }
+    details{
+        border-top: 1px solid white;
+        padding: 5%;
+    }
+}
