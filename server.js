@@ -1,3 +1,7 @@
+require('dotenv').config();
+const URI = process.env.MONGO_URI;
+const session_secret = process.env.Session_SECRET;
+
 const express  = require("express");
 let app = express();
 
@@ -5,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
 app.use(cookieParser());
-app.use(session({ secret: "My session secret" }));
+app.use(session({ secret: session_secret }));
 
 // Make session data available to all views
 app.use((req, res, next) => {
@@ -43,7 +47,7 @@ let Products = require("./models/products.models");
 let Order = require("./models/Order.models");
 
 const mongoose = require("mongoose");
-let connectionString = "mongodb://127.0.0.1:27017/Edenrobe"; //since i have ipv4 version of mongodb
+let connectionString = URI; //since i have ipv4 version of mongodb
 // let connectionString = "mongodb://localhost:27017/Edenrobe"; // use this when u have ipv6 version
 mongoose.connect(connectionString)
 .then(()=>{
