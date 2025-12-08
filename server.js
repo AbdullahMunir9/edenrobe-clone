@@ -2,7 +2,7 @@ require('dotenv').config();
 const URI = process.env.MONGO_URI;
 const session_secret = process.env.Session_SECRET;
 const API_KEY = process.env.API_KEY;
-const port = process.env.Port || 3000;
+const port = process.env.PORT || 3000;
 
 const express  = require("express");
 let app = express();
