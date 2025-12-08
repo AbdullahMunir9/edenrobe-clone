@@ -7,11 +7,26 @@ const port = process.env.PORT || 3000;
 const express  = require("express");
 let app = express();
 
+app.set("trust proxy", 1);
+
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
 app.use(cookieParser());
-app.use(session({ secret: session_secret }));
+
+app.use(
+    session({
+        secret: session_secret,
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            secure: false,       // MUST be false on Render free tier
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000
+        }
+    })
+);
+
 
 // Make session data available to all views
 app.use((req, res, next) => {
@@ -21,7 +36,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 var expressLayouts = require("express-ejs-layouts");
 app.use(expressLayouts);
@@ -63,6 +78,8 @@ mongoose.connect(connectionString)
 app.get("/api/removeitem/:id",(req,res)=>{
     let cart = req.cookies.cart;
     let id = req.params.id;
+
+    if (!cart) cart = [];
 
     for(let i=0; i<=cart.length;i++){
         if(id == cart[i]){
@@ -288,6 +305,6 @@ app.get('/api/products', async (req, res) => {
 // })
 
 
-app.listen(port, ()=>{
-    console.log("Server started at location : 3000");
+app.listen(port, () => {
+    console.log("✅ Server running on port:", port);
 });
