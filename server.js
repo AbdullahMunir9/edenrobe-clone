@@ -52,12 +52,13 @@ const mongoose = require("mongoose");
 let connectionString = URI; //since i have ipv4 version of mongodb
 // let connectionString = "mongodb://localhost:27017/Edenrobe"; // use this when u have ipv6 version
 mongoose.connect(connectionString)
-.then(()=>{
-    console.log(`Connected To:${connectionString}`)
+.then(() => {
+    console.log(`Connected To: ${connectionString}`);
 })
-.catch((err)=>{
-    console.log("hello");
-})
+.catch((err) => {
+    console.error("❌ MongoDB Connection Error:", err.message);
+});
+
 
 app.get("/api/removeitem/:id",(req,res)=>{
     let cart = req.cookies.cart;
