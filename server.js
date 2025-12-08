@@ -1,6 +1,6 @@
 require('dotenv').config();
 const URI = process.env.MONGO_URI;
-const session_secret = process.env.Session_SECRET;
+const session_secret = process.env.SESSION_SECRET;
 const API_KEY = process.env.API_KEY;
 const port = process.env.PORT || 3000;
 
