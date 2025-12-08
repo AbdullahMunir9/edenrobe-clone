@@ -2,7 +2,7 @@ require('dotenv').config();
 const URI = process.env.MONGO_URI;
 const session_secret = process.env.Session_SECRET;
 const API_KEY = process.env.API_KEY;
-const port = process.env.Port;
+const port = process.env.Port || 3000;
 
 const express  = require("express");
 let app = express();
@@ -288,5 +288,5 @@ app.get('/api/products', async (req, res) => {
 
 
 app.listen(port, ()=>{
-    console.log("Server started at location : 5000");
+    console.log("Server started at location : 3000");
 });
